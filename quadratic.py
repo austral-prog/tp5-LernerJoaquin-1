@@ -10,11 +10,10 @@ def roots(a, b, c):
         r3 = -b / (2*a)
         print(f"({r3})")
     else:
-        return "( )"
-
+        print("( )")
+        return
             
     
-
 def value_y(a, b, c, x):
     ecuacion = ((a*(x**2)) + b*x + c )
     print(ecuacion)
@@ -22,7 +21,6 @@ def value_y(a, b, c, x):
 
 def to_string(a, b, c):
     print(f"f(x) = {a} * X^2 + {b} * X + {c}") 
-
     
 
 
