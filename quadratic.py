@@ -16,7 +16,19 @@ def value_y(a, b, c, x):
     return a * x**2 + b * x + c
 
 def to_string(a, b, c):
-    return f"f(x) = {a} * X^2 + {b} * X + {c}"
+    terms = []
+    if a != 0:
+        terms.append(f"{a} * X^2")
+    if b != 0:
+        terms.append(f"{b} * X")
+    if c != 0 or not terms:  # si todos son 0 → "f(x) = 0"
+        terms.append(f"{c}")
+    return "f(x) = " + " + ".join(terms)
 
 def derivation(a, b, c):
-    return f"f'(x) = {2*a}x + {b}"
+    terms = []
+    if 2*a != 0:
+        terms.append(f"{2*a} * X")
+    if b != 0 or not terms:  # si derivada = 0 → "f'(x) = 0"
+        terms.append(f"{b}")
+    return "f'(x) = " + " + ".join(terms)
